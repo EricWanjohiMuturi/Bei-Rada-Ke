@@ -1,0 +1,24 @@
+{% load compress %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bei Rada - {% block title %} {% endblock title %}</title>
+
+    <link rel="shortcut icon" href="{% static 'images/branding/BeiRada_Red.png' %}" type="image/x-icon">
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    {% endcompress %}
+</head>
+<body>
+    {% include 'includes/header.html' %}
+    <div class="container mx-auto">
+        {% block content %} {% endblock content %}
+    </div>
+    {% include 'includes/footer.html' %}   
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+</html>
