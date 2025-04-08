@@ -4,10 +4,79 @@
 
 {% block content %}
 
-<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-</a>
+<section class="relative bg-gray-50 dark:bg-gray-900 py-3 sm:py-5 h-[20rem]">
+    <!-- Background Image with Dark Overlay -->
+    <div 
+      class="absolute inset-0 bg-center bg-no-repeat bg-cover bg-blend-multiply"
+      style="
+            background-image: 
+            linear-gradient(rgba(2, 2, 2, 0.6), rgba(0, 0, 0, 0.6)),
+            url('{% static "images/branding/Bei-Rada-Hero-Image.webp" %}');
+        "
+    ></div>
+  
+    <!-- Content Container -->
+    <div class="relative z-10 px-4 mx-auto max-w-screen-2xl lg:px-12 h-full flex items-center">
+      <form class="mx-auto w-full max-w-screen-xl">
+        <div class="flex flex-wrap gap-3 items-center justify-center mx-auto">
+          <div class="max-w-4xl w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 space-y-4 md:space-y-0 md:space-x-4 md:flex md:items-center md:justify-center">
+            <!-- Budget Dropdown -->
+            <div class="relative w-full md:w-auto">
+              <button id="budgetDropdownButton" data-dropdown-toggle="budgetDropdown" class="w-full md:w-auto flex justify-between items-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                Budget
+                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </button>
+              
+              <!-- Budget Dropdown Menu -->
+              <div id="budgetDropdown" class="z-30 hidden bg-white rounded-lg shadow-sm w-full md:w-60 dark:bg-gray-700">
+                <ul class="h-48 p-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200">
+                  <li>
+                    <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                      <input id="budget-option-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                      <label for="budget-option-1" class="w-full ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">$0 - $500</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          
+            <!-- Category Dropdown -->
+            <div class="relative w-full md:w-auto">
+              <button id="categoryDropdownButton" data-dropdown-toggle="categoryDropdown" class="w-full md:w-auto flex justify-between items-center px-4 py-2.5 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800" type="button">
+                Categories
+                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </button>
+              
+              <!-- Category Dropdown Menu -->
+              <div id="categoryDropdown" class="z-20 hidden bg-white rounded-lg shadow-sm w-full md:w-44 dark:bg-gray-700">
+                <ul class="p-2 text-sm text-gray-700 dark:text-gray-200">
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Shopping</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          
+            <!-- Search Bar -->
+            <div class="relative w-full">
+              <div class="flex">
+                <input type="search" id="main-search" class="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Search..." required>
+                <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                  </svg>
+                  <span class="sr-only">Search</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
     
 {% endblock content %}
