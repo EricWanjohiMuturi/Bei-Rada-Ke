@@ -1,6 +1,22 @@
 {
+  "name": "beirada",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tailwindcss -i ./static/src/input.css -o ./static/css/output.css --minify"
+  },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.3",
     "tailwindcss": "^4.1.3"
+  },
+  "build": {
+    "builder": "nixpacks",
+    "buildpacks": [
+      { "type": "nodejs" },
+      { "type": "python" }
+    ],
+    "config": {
+      "nodeVersion": "18.x",
+      "pythonVersion": "3.12.6"
+    }
   }
 }
