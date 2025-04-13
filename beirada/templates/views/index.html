@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<section class="relative bg-gray-50 dark:bg-gray-900 py-3 sm:py-5 h-[28rem]">
+<section class="max-w-screen-full relative bg-gray-50 dark:bg-gray-900 py-3 sm:py-5 h-[32rem]">
     <!-- Background Image with Dark Overlay -->
      
     <div 
@@ -14,58 +14,54 @@
             linear-gradient(rgba(2, 2, 2, 0.6), rgba(0, 0, 0, 0.6)),
             url('{% static "images/branding/Bei-Rada-Hero-Image.webp" %}');
         "
-    ></div>
+    >
+    </div>
     
     
     <!-- Content Container -->
     <div class="relative z-10 px-4 mx-auto max-w-screen-2xl lg:px-12 h-full flex flex-col justify-center">
-      <h1 class="text-5xl sm:text-3xl font-bold text-center text-white mb-10">Discover More, Shop Smart</h1>
-      <form class="mx-auto w-full max-w-screen-xl">
+      <h1 class="text-5xl sm:text-3xl font-bold text-center text-white mb-3">Discover More, Shop Smart</h1>
+      <p class="text-2xl sm:text-lg w-20 font-light text-center text-white mb-10">Discover daily discounts on tech products, across different shops & handpicked just for you.</p>
+      <form class="mx-auto w-auto max-w-screen-xl">
         <div class="flex flex-wrap gap-3 items-center justify-center mx-auto">
           <div class="max-w-4xl w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 space-y-4 md:space-y-0 md:space-x-4 md:flex md:items-center md:justify-center">
             <!-- Budget Dropdown -->
             <div class="relative w-full md:w-auto">
-              <button id="budgetDropdownButton" data-dropdown-toggle="budgetDropdown" class="w-full md:w-auto flex justify-between items-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                Budget
-                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg>
-              </button>
-              
-              <!-- Budget Dropdown Menu -->
-              <div id="budgetDropdown" class="z-30 hidden bg-white rounded-lg shadow-sm w-full md:w-60 dark:bg-gray-700">
-                <ul class="h-48 p-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200">
-                  <li>
-                    <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                      <input id="budget-option-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                      <label for="budget-option-1" class="w-full ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">$0 - $500</label>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <!-- <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label> -->
+              <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected class="text-gray-400">Your Budget</option>
+                <option value="US">Ksh. 0 - Ksh. 1000</option>
+                <option value="CA">Ksh. 1000 - Ksh. 5000</option>
+                <option value="FR">Ksh. 5000 - Ksh. 10000</option>
+                <option value="DE">Ksh. 10000 - Ksh. 20000</option>
+              </select>
             </div>
           
             <!-- Category Dropdown -->
             <div class="relative w-full md:w-auto">
-              <button id="categoryDropdownButton" data-dropdown-toggle="categoryDropdown" class="w-full md:w-auto flex justify-between items-center px-4 py-2.5 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800" type="button">
-                Categories
-                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg>
-              </button>
-              
-              <!-- Category Dropdown Menu -->
-              <div id="categoryDropdown" class="z-20 hidden bg-white rounded-lg shadow-sm w-full md:w-44 dark:bg-gray-700">
-                <ul class="p-2 text-sm text-gray-700 dark:text-gray-200">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Shopping</a>
-                  </li>
-                </ul>
-              </div>
+              <!-- <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label> -->
+              <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected class="text-gray-400">Choose Category</option>
+                <option value="US">Headphones</option>
+                <option value="CA">Earbuds</option>
+                <option value="FR">Smartphones</option>
+                <option value="DE">Smartwatches</option>
+              </select>
+            </div>
+
+            <div class="relative w-full md:w-auto">
+              <!-- <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label> -->
+              <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected class="text-gray-400">Choose Shop</option>
+                <option value="US">Jumia</option>
+                <option value="CA">Kilimall</option>
+                <option value="FR">Masoko</option>
+                <option value="DE">Expressmartke</option>
+              </select>
             </div>
           
             <!-- Search Bar -->
-            <div class="relative w-full">
+            <div class="relative w-auto">
               <div class="flex">
                 <input type="search" id="main-search" class="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Search..." required>
                 <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
